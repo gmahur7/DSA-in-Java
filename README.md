@@ -1,4 +1,3 @@
-Here's a professional and clean `README.md` file for your **"DSA in Java"** GitHub repository:
 
 ---
 
@@ -12,18 +11,18 @@ Each topic is organized into folders for better structure and readability.
 
 ```
 
-DSA-in-Java/
-│
-├── Array/
-├── Strings/
-├── List/
-├── Stack/
-├── Queue/
-├── Tree/
-├── Graph/
-├── Recursion/
-├── Sorting/
-└── ... more to come
+    DSA-in-Java/
+    │
+    ├── Array/
+    ├── Strings/
+    ├── List/
+    ├── Stack/
+    ├── Queue/
+    ├── Tree/
+    ├── Graph/
+    ├── Recursion/
+    ├── Sorting/
+    └── ... more to come
 
 ```
 
