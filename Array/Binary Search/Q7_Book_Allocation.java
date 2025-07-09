@@ -7,18 +7,36 @@ public class Q7_Book_Allocation {
         System.out.println(allocateBook(books, students));
     }
 
-    static int allocateBook(int array[], int m) {
-        int sum = 0;
-        for (int i : array) {
-            sum += i;
+    static boolean isPossibleSolution(int array[],int students,int mid){
+        int student=1;
+        int pagesCount=0;
+
+        for(int i=0;i<array.length;i++){
+            if(pagesCount+array[i]<=mid){
+                pagesCount+=array[i];
+            }else{
+                student++;
+                if(student>students || mid<array[i]){
+                    return false;
+                }
+                pagesCount=array[i];
+            }
         }
-        int start = 0;
-        int end = sum;
-        int ans = -1;
+        return true;
+    }
+
+    static int allocateBook(int books[], int students) {
+        int totalPages = 0;
+        for (int i : books) {
+            totalPages += i;
+        }
+
+        int start = 0, end = totalPages, ans=-1;
         int mid = (start + end) / 2;
+
         while (start <= end) {
-            if (isPossibleSolution(array, m, mid)) {
-                ans = mid;
+            if (isPossibleSolution(books,students,mid)) {
+                ans=mid;
                 end = mid - 1;
             } else {
                 start = mid + 1;
@@ -27,23 +45,4 @@ public class Q7_Book_Allocation {
         }
         return ans;
     }
-
-    static boolean isPossibleSolution(int array[], int m, int mid) {
-        int studentCount = 1;
-        int pageSum = 0;
-
-        for (int i : array) {
-            if (pageSum + i <= mid) {
-                pageSum += array[i];
-            } else {
-                studentCount++;
-                if (studentCount > m || array[i] > mid) {
-                    return false;
-                }
-                pageSum = array[i];
-            }
-        }
-        return true;
-    }
-
 }
