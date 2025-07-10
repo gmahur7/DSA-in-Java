@@ -1,4 +1,4 @@
-public class Q13_Search_In_Rotated_Array {
+public class Q13_Search_In_Rotated_Array_II {
     public static void main(String[] args) {
         int array[] = {10,20,30,40,50,1,2};
         for(int i : array){
