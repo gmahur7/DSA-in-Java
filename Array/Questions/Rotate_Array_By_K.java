@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class Rotate_Array_By_K {
     public static void main(String[] args) {
@@ -20,7 +19,7 @@ public class Rotate_Array_By_K {
         
     }
 
-    static ArrayList rotate(ArrayList<Integer> array,int k){
+    static ArrayList<Integer> rotate(ArrayList<Integer> array,int k){
         int n =array.size();
           k = k % n;
 

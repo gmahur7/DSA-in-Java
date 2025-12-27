@@ -9,7 +9,7 @@ public class Q16_Single_Element_In_Sorted_Array {
         System.out.println("Single elem is :" + list.get(single));
     }
 
-    static int checkSingleElement(ArrayList list) {
+    static int checkSingleElement(ArrayList<Integer> list) {
         
         if(list.size()==1) return 0;
         if(list.get(0)!=list.get(1)) return 0;

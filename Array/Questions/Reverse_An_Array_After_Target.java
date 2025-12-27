@@ -2,7 +2,7 @@ public class Reverse_An_Array_After_Target {
      public static void main(String[] args) {
         int[] array = {1,2,3,4,5,6};
         int after=3;
-        int[] reversedArray = reverse(array,3);
+        int[] reversedArray = reverse(array,after);
 
         for(int i:reversedArray){
             System.out.print(i+",");
