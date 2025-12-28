@@ -1,29 +1,27 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Bubble_Sort {
     public static void main(String[] args) {
-        int[] array = {8,3,5,1,0,2,4,9,7};
-        int[] sortedArray = bubbleSort(array);
-
-        for(int i : sortedArray){
-            System.out.print(i+",");
-        }
+        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(8, 3, 4, 7, 6, 1, 2));
+        sort(list);
+        System.out.println("Sorted: " + list.toString());
     }
 
-    static int[] bubbleSort (int[] array){
-        int n=array.length;
-        boolean hasSwapped;
-        for(int i=0;i<n-1;i++){
-            hasSwapped=false;
-            for (int j = 0; j < n-1-i; j++) {
-                if(array[j]>array[j+1]){
-                    int temp = array[j];
-                    array[j]=array[j+1];
-                    array[j+1]=temp;
-                    hasSwapped=true;
+    static void sort(ArrayList<Integer> list) {
+
+        for (int i = list.size() - 1; i >= 1; i--) {
+            boolean swap=false;
+            for (int j = 0; j <= i - 1; j++) {
+                if (list.get(j) > list.get(j + 1)) {
+                    int temp = list.get(j);
+                    list.set(j, list.get(j + 1));
+                    list.set(j + 1, temp);
+                    swap=true;
                 }
             }
-            if(!hasSwapped) break;
+            if(!swap) break;
         }
-        return array;
+
     }
 }
