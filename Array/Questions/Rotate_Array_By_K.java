@@ -1,38 +1,32 @@
-import java.util.ArrayList;
-import java.util.Arrays;
+
 
 public class Rotate_Array_By_K {
     public static void main(String[] args) {
+        int k = 3;
 
-        // List<Integer> list1 = Arrays.asList(1,2,3,4,5,6,7,8);
-        // ArrayList<Integer> list= new ArrayList<>(list1);
-        int k=3;
+        int array[] = { 1, 2, 3, 4, 5,6,7 };
 
-        int array[] = {1,2,3,4,5,6,7,8};
-        ArrayList<Integer> list= new ArrayList<>(Arrays.stream(array).boxed().toList());
+        rotate(array, k);
 
-        ArrayList<Integer> rotatedList = rotate(list, k);
-        
-        for (Integer i : rotatedList) {
-            System.out.print(i+",");
+        for (Integer i : array) {
+            System.out.print(i + ",");
         }
-        
+
     }
 
-    static ArrayList<Integer> rotate(ArrayList<Integer> array,int k){
-        int n =array.size();
-          k = k % n;
+    static void rotate(int[] nums, int k) {
+        if (k < 1)
+            return;
+        int n = nums.length;
 
-        ArrayList<Integer> temp = new ArrayList<>(array);
+        k = k % n;
 
-        for (int i = 0; i < n; i++) {
-            temp.set(((i+k)%n), array.get(i));
+        for (int i = 0; i < k; i++) {
+            int temp = nums[n - 1];
+            for (int j = n-1; j >0; j--) {
+                nums[j] = nums[j - 1];
+            }
+            nums[0] = temp;
         }
-
-        for(int j = 0;j<n;j++){
-            array.set(j, temp.get(j));
-        }
-
-        return temp;
     }
 }
